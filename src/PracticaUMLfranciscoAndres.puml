@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Member
+class BoardMember
+class Event
+class Conference
+class BoardMeeting
+class Location
+class Person
+class AAUOC
+Event <|-- Conference
+Event <|-- BoardMeeting
+Person <|-- Member
+Member <|-- BoardMember
+AAUOC o-- Person
+AAUOC o-- Location
+AAUOC o-- Event
+Event -- Member
+BoardMember -- BoardMeeting
+Person -- Conference
+
+
+
+@enduml
