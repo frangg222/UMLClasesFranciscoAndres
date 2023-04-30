@@ -12,13 +12,13 @@ Event <|-- Conference
 Event <|-- BoardMeeting
 Person <|-- Member
 Member <|-- BoardMember
-AAUOC o-- Person
-AAUOC o-- Location
-AAUOC o-- Event
-Location -- Event:isLocated In
-Event -- Member : attendsTo
-BoardMember -- BoardMeeting:attendsTo
-Person -- Conference:attendsTo
+AAUOC o-- "0..*"Person
+AAUOC o-- "0..*"Location
+AAUOC o-- "0..*"Event
+Location "1" -- "0..*" Event:isLocated In
+Event "0..*" -- "0..*" Member : attendsTo
+BoardMember "0..*"-- "0..*"BoardMeeting:attendsTo
+Person "0..*" -- "0..*"Conference:attendsTo
 class AAUOC {
 newLocation(l:Location): void
 newEvent(e : Event) : void
